@@ -36,14 +36,14 @@ export default function Header({ activeProduct, handleSelectProduct }) {
             <motion.div
               initial={false}
               animate={{
-                left: activeProduct === "Work" ? "2px" : "102px",
+                left: activeProduct === "Work" ? "2px" : "98px",
               }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
-              className={`absolute -z-[5] w-[100px] bg-black/20 h-[30px] rounded-full `}
+              className={`absolute -z-[5] w-[96px] bg-black/20 h-[30px] rounded-full `}
             />
             <button
               onClick={() => handleSelectProduct("Work")}
-              className={`w-[100px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-[30px] cursor-pointer flex items-center justify-center gap-1 ${
+              className={`w-[96px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-[30px] cursor-pointer flex items-center justify-center gap-1 ${
                 activeProduct === "Work" ? "opacity-100" : "opacity-50"
               }`}
             >
@@ -55,7 +55,7 @@ export default function Header({ activeProduct, handleSelectProduct }) {
                 activeProduct === "Connect" && setShowSpaceIdSwitcher(true);
               }}
               onMouseLeave={() => {}}
-              className={`w-[100px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-[30px] cursor-pointer flex items-center justify-center gap-1 ${
+              className={`w-[96px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-[30px] cursor-pointer flex items-center justify-center gap-1 ${
                 activeProduct === "Connect" ? "opacity-100" : "opacity-50"
               }`}
             >
