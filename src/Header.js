@@ -32,18 +32,18 @@ export default function Header({ activeProduct, handleSelectProduct }) {
         <div className="flex items-center gap-3">
           <Logo />
 
-          <div className="flex p-1 rounded-full relative items-center bg-black/10 text-white">
+          <div className="flex p-0.5 rounded-full relative items-center bg-black/10 text-white">
             <motion.div
               initial={false}
               animate={{
-                left: activeProduct === "Work" ? "4px" : "108px",
+                left: activeProduct === "Work" ? "2px" : "102px",
               }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
-              className={`absolute -z-[5] w-[104px] bg-black/20 h-8 rounded-full `}
+              className={`absolute -z-[5] w-[100px] bg-black/20 h-[30px] rounded-full `}
             />
             <button
               onClick={() => handleSelectProduct("Work")}
-              className={`w-[104px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-8 cursor-pointer flex items-center justify-center gap-1 ${
+              className={`w-[100px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-[30px] cursor-pointer flex items-center justify-center gap-1 ${
                 activeProduct === "Work" ? "opacity-100" : "opacity-50"
               }`}
             >
@@ -55,7 +55,7 @@ export default function Header({ activeProduct, handleSelectProduct }) {
                 activeProduct === "Connect" && setShowSpaceIdSwitcher(true);
               }}
               onMouseLeave={() => {}}
-              className={`w-[104px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-8 cursor-pointer flex items-center justify-center gap-1 ${
+              className={`w-[100px] text-[11px] uppercase font-medium transition-all duration-200 ease-in-out tracking-widest h-[30px] cursor-pointer flex items-center justify-center gap-1 ${
                 activeProduct === "Connect" ? "opacity-100" : "opacity-50"
               }`}
             >
