@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./Header";
+import WorkDashboard from "./work-dashboard.png";
+import ConnectDashboard from "./connect-dashboard.png";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
+  const [activeProduct, setActiveProduct] = useState("Work");
+
+  const handleSelectProduct = (product) => {
+    return setActiveProduct(product);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Header
+        handleSelectProduct={handleSelectProduct}
+        activeProduct={activeProduct}
+      />
+
+      <AnimatePresence>
+        {activeProduct === "Work" ? (
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            src={WorkDashboard}
+            alt=""
+            className="mt-14"
+          />
+        ) : (
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            src={ConnectDashboard}
+            alt=""
+            className="mt-14"
+          />
+        )}
+      </AnimatePresence>
+    </main>
   );
 }
 
