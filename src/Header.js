@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import {
   ChevronIcon,
+  ConnectAnalyticsIcon,
+  ConnectPlaybookIcon,
+  ConnectPulseIcon,
+  ConnectStudioIcon,
+  ConnectTeamsIcon,
   Logo,
   SettingsIcon,
   TickIcon,
@@ -103,19 +108,55 @@ export default function Header({ activeProduct, handleSelectProduct }) {
           </div>
         </div>
 
-        <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center gap-8">
-          <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
-            <WorkAnalyticsIcon />
-          </button>
+        <AnimatePresence>
+          {activeProduct === "Work" ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center gap-8"
+            >
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <WorkAnalyticsIcon />
+              </button>
 
-          <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
-            <WorkDiscourseIcon />
-          </button>
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <WorkDiscourseIcon />
+              </button>
 
-          <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
-            <WorkStoriesIcon />
-          </button>
-        </div>
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <WorkStoriesIcon />
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center gap-8"
+            >
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <ConnectAnalyticsIcon />
+              </button>
+
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <ConnectPulseIcon />
+              </button>
+
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <ConnectTeamsIcon />
+              </button>
+
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <ConnectStudioIcon />
+              </button>
+
+              <button className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer hover:bg-black/10">
+                <ConnectPlaybookIcon />
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10 cursor-pointer">
